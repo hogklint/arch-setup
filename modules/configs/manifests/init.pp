@@ -39,10 +39,10 @@ class configs ($username = 'hogklint') {
     owner => "$username"
   }
 
-  file {"/home/$username/local":
-    ensure => 'directory',
-    owner => "$username"
-  }
+#  file {"/home/$username/local":
+#    ensure => 'directory',
+#    owner => "$username"
+#  }
 
   file {"/home/$username/local/bin":
     ensure => 'link',
@@ -59,6 +59,26 @@ class configs ($username = 'hogklint') {
   file {"/home/$username/.Xmodmap":
     ensure => 'link',
     target => "/home/$username/repos/user-files/Xmodmap",
+    owner => "$username"
+  }
+
+  file {"/home/$username/asdf2":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  file {"/home/$username/asdf2/aosp":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  file {"/home/$username/asdf4":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  file {"/home/$username/asdf4/aosp":
+    ensure => 'directory',
     owner => "$username"
   }
 }
