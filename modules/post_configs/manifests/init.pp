@@ -49,4 +49,18 @@ class post_configs ($username = 'hogklint',
       user => "$username",
       minute => 0,
   }
+
+  exec {'init_asdf4':
+      command => "repo init -u ssh://gerrit/Android_bsd_manifest -b master -m $asdf4_manifest --reference /home/common/mirrors/asdf4",
+      cwd => "/home/$username/asdf2/aosp_local",
+      path => "/home/$username/local/android:/usr/bin",
+      timeout => 10,
+  }
+
+  exec {'init_asdf2':
+      command => "repo init -u ssh://gerrit/asdf1_p2952_manifests -b master -m $asdf2_manifest --reference /home/common/mirrors/asdf2",
+      cwd => "/home/$username/asdf2/aosp_local",
+      path => "/home/$username/local/android:/usr/bin",
+      timeout => 10,
+  }
 }
