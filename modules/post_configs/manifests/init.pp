@@ -30,6 +30,7 @@ class post_configs ($username = 'hogklint',
   }
 
   exec {'init_asdf4_mirror':
+      unless => '/bin/test -d /home/common/mirrors/asdf4/.repo',
       command => "repo init --mirror -u ssh://gerrit/Android_bsd_manifest -b devel -m $asdf4_manifest",
       cwd => "/home/common/mirrors/asdf4",
       path => "/home/$username/local/android:/usr/bin",
@@ -37,6 +38,7 @@ class post_configs ($username = 'hogklint',
   }
 
   exec {'init_asdf2_mirror':
+      unless => '/bin/test -d /home/common/mirrors/asdf2/.repo',
       command => "repo init --mirror -u ssh://gerrit/asdf1_p2952_manifests -b master -m $asdf2_manifest --reference /home/common/mirrors/asdf4",
       cwd => "/home/common/mirrors/asdf2",
       path => "/home/$username/local/android:/usr/bin",
@@ -51,8 +53,8 @@ class post_configs ($username = 'hogklint',
   }
 
   exec {'init_asdf4':
-      command => "repo init -u ssh://gerrit/Android_bsd_manifest -b master -m $asdf4_manifest --reference /home/common/mirrors/asdf4",
-      cwd => "/home/$username/asdf2/aosp_local",
+      command => "repo init -u ssh://gerrit/Android_bsd_manifest -b devel -m $asdf4_manifest --reference /home/common/mirrors/asdf4",
+      cwd => "/home/$username/asdf4/aosp_local",
       path => "/home/$username/local/android:/usr/bin",
       timeout => 10,
   }
