@@ -48,6 +48,13 @@ class sudo_configs ($username = 'hogklint',
     match => "$buildserver",
   }
 
+  file_line {"Docker insecure nexus registry":
+    path => '/etc/docker/daemon.json',
+    ensure => present,
+    line => '{ "insecure-registries":["nexus.android.ccompanyauto.net:5050","nexus.android.ccompanyauto.net:5000"] }',
+    match => "nexus.android.ccompanyauto.net",
+  }
+
   file_line {"fstab_asdf4_out":
     path => '/etc/fstab',
     ensure => present,
