@@ -45,6 +45,14 @@ class post_configs ($username = 'hogklint',
       timeout => 10,
   }
 
+  exec {'init_asdf225_mirror':
+      unless => '/bin/test -d /home/common/mirrors/asdf225/.repo',
+      command => "repo init --mirror -u ssh://10.236.95.27:29418/10032962_asdf225_manifests -b master -m default.xml --reference /home/common/mirrors/asdf2",
+      cwd => "/home/common/mirrors/asdf225",
+      path => "/home/$username/local/android:/usr/bin",
+      timeout => 10,
+  }
+
   cron {'sync_mirrors':
       ensure => 'present',
       command => "/home/$username/local/bin/update_aosp_mirrors.sh",
