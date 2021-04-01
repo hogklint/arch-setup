@@ -47,7 +47,7 @@ class post_configs ($username = 'hogklint',
 
   exec {'init_asdf225_mirror':
       unless => '/bin/test -d /home/common/mirrors/asdf225/.repo',
-      command => "repo init --mirror -u ssh://10.236.95.27:29418/10032962_asdf225_manifests -b master -m default.xml --reference /home/common/mirrors/asdf2",
+      command => "repo init --mirror -u ssh://gerrit/10032962_asdf225_manifests -b master -m default.xml --reference /home/common/mirrors/asdf2",
       cwd => "/home/common/mirrors/asdf225",
       path => "/home/$username/local/android:/usr/bin",
       timeout => 10,
