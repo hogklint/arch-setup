@@ -19,16 +19,6 @@ class post_configs ($username = 'hogklint',
     owner => "$username"
   }
 
-  file {"/home/common/mirrors/asdf4/.repo":
-    ensure => 'absent',
-    force => true,
-  }
-
-  file {"/home/common/mirrors/asdf2/.repo":
-    ensure => 'absent',
-    force => true,
-  }
-
   exec {'init_asdf4_mirror':
       unless => '/bin/test -d /home/common/mirrors/asdf4/.repo',
       command => "repo init --mirror -u ssh://gerrit/Android_bsd_manifest -b devel -m $asdf4_manifest",

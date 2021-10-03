@@ -55,20 +55,6 @@ class sudo_configs ($username = 'hogklint',
     match => "nexus.android.ccompanyauto.net",
   }
 
-  file_line {"fstab_asdf4_out":
-    path => '/etc/fstab',
-    ensure => present,
-    line => "$buildserver:/home/$username/asdf4/aosp_local/out /home/$username/asdf4/aosp_local/out nfs4 rw,defaults,noauto,x-systemd.automount,x-systemd.device-timeout=10,x-systemd.requires=network.target 0 0",
-    match => "$buildserver.*asdf4.*aosp.*out",
-  }
-
-  file_line {"fstab_asdf2_out":
-    path => '/etc/fstab',
-    ensure => present,
-    line => "$buildserver:/home/$username/asdf2/aosp_local/out /home/$username/asdf2/aosp_local/out nfs4 rw,defaults,noauto,x-systemd.automount,x-systemd.device-timeout=10,x-systemd.requires=network.target 0 0",
-    match => "$buildserver.*asdf2.*aosp.*out",
-  }
-
   file {"/home/common":
     ensure => 'directory',
     replace => 'false',
