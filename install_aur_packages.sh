@@ -18,6 +18,7 @@ aur_packages="cntlm
 android-apktool
 android-sdk-build-tools
 android-studio
+nauniq
 plantuml
 pidgin-sipe
 urlview
