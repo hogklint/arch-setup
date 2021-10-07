@@ -44,19 +44,6 @@ class configs ($username = 'hogklint') {
 #    owner => "$username"
 #  }
 
-  file {"/home/$username/local/android":
-    ensure => 'directory',
-    owner => "$username"
-  }
-
-  file {"/home/$username/local/android/repo":
-    ensure => present,
-    source => 'https://storage.googleapis.com/git-repo-downloads/repo',
-    replace => 'false',
-    mode => '0755',
-    owner => "$username",
-  }
-
   file {"/home/$username/local/bin":
     ensure => 'link',
     target => "/home/$username/repos/user-files/bin",
@@ -74,24 +61,3 @@ class configs ($username = 'hogklint') {
     target => "/home/$username/repos/user-files/Xmodmap",
     owner => "$username"
   }
-
-  file {"/home/$username/asdf2":
-    ensure => 'directory',
-    owner => "$username"
-  }
-
-  file {"/home/$username/asdf2/aosp_local":
-    ensure => 'directory',
-    owner => "$username"
-  }
-
-  file {"/home/$username/asdf4":
-    ensure => 'directory',
-    owner => "$username"
-  }
-
-  file {"/home/$username/asdf4/aosp_local":
-    ensure => 'directory',
-    owner => "$username"
-  }
-}
