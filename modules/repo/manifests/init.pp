@@ -1,4 +1,14 @@
 class repo ($username = 'hogklint'){
+  file {"/home/$username/repos":
+    ensure => 'directory',
+    owner => "$username",
+  }
+
+  file {"/home/$username/local":
+    ensure => 'directory',
+    owner => "$username",
+  }
+
   vcsrepo {"/home/$username/.vim":
     ensure => present,
     provider => git,
@@ -43,11 +53,6 @@ class repo ($username = 'hogklint'){
     provider => git,
     source => 'https://github.com/nomme/arch-setup.git',
     user => "$username",
-  }
-
-  file {"/home/$username/local":
-    ensure => 'directory',
-    owner => "$username",
   }
 
   vcsrepo {"/home/$username/local/tmuxifier":

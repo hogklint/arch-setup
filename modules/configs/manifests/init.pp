@@ -39,11 +39,6 @@ class configs ($username = 'hogklint', $host = 'benighted') {
     owner => "$username"
   }
 
-#  file {"/home/$username/local":
-#    ensure => 'directory',
-#    owner => "$username"
-#  }
-
   file {"/home/$username/local/bin":
     ensure => 'link',
     target => "/home/$username/repos/user-files/bin",
