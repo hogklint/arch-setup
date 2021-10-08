@@ -61,3 +61,16 @@ class configs ($username = 'hogklint') {
     target => "/home/$username/repos/user-files/Xmodmap",
     owner => "$username"
   }
+
+  file {"/home/$username/tmp":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  vcsrepo {"/home/$username/repos/paru":
+    ensure => present,
+    provider => git,
+    source => 'https://aur.archlinux.org/paru.git',
+    user => "$username",
+  }
+}

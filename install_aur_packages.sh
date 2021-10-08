@@ -6,39 +6,17 @@ function error()
   exit -1
 }
 
-pushd "$HOME/tmp/aur" >/dev/null
+[ -d $HOME/repos/paru ] || error "No paru dir found"
 
-[ -d $HOME/tmp/aur/auracle-git ] || error "No auracle-git dir found"
-
-pushd $HOME/tmp/aur/auracle-git
+pushd $HOME/repos/paru
 makepkg --syncdeps --install --needed
 popd
 
-aur_packages="cntlm
-android-apktool
-android-sdk-build-tools
-android-studio
-nauniq
+aur_packages="nauniq
 plantuml
-pidgin-sipe
 urlview
-scrcpy
 path-extractor"
 #timeshift/snapper
 #ttf-ms-fonts
 
-for package in $aur_packages;
-do
-    auracle -r download "$package" || { echo "failed $package" ; continue; }
-    pushd "$package" >/dev/null
-    makepkg --syncdeps --install --needed
-    popd >/dev/null
-done
-
-popd
-
-echo ""
-echo ""
-echo "Remember!"
-echo "Configure and enable cntlm!"
-echo ""
+paru -S "$aur_packages"
