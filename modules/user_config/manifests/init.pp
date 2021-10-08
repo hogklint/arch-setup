@@ -1,4 +1,4 @@
-class configs ($username = 'hogklint', $host = 'benighted') {
+class user_config ($username = 'hogklint', $host = 'benighted') {
   file {"/home/$username/.Xdefaults":
     ensure => 'link',
     target => "/home/$username/repos/user-files/Xdefaults",
