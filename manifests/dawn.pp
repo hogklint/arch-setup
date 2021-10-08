@@ -1,5 +1,8 @@
 node default {
 class {'repo': username => 'jimmieh', }
-class {'configs': username => 'jimmieh', }
+class {'configs':
+  username => 'jimmieh',
+  host => 'benighted',
+}
 }
 

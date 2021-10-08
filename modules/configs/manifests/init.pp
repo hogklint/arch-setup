@@ -1,4 +1,4 @@
-class configs ($username = 'hogklint') {
+class configs ($username = 'hogklint', $host = 'benighted') {
   file {"/home/$username/.Xdefaults":
     ensure => 'link',
     target => "/home/$username/repos/user-files/Xdefaults",
@@ -13,13 +13,13 @@ class configs ($username = 'hogklint') {
 
   file {"/home/$username/.gitconfig":
     ensure => 'link',
-    target => "/home/$username/repos/user-files/gitconfig-benighted",
+    target => "/home/$username/repos/user-files/gitconfig-$host",
     owner => "$username"
   }
 
   file {"/home/$username/.tmux.conf":
     ensure => 'link',
-    target => "/home/$username/repos/user-files/tmux-benighted.conf",
+    target => "/home/$username/repos/user-files/tmux-$host.conf",
     owner => "$username"
   }
 
@@ -35,7 +35,7 @@ class configs ($username = 'hogklint') {
 
   file {"/home/$username/.config/awesome/rc.lua":
     ensure => 'link',
-    target => "/home/$username/repos/user-files/awesome-benighted.lua",
+    target => "/home/$username/repos/user-files/awesome-$host.lua",
     owner => "$username"
   }
 
@@ -52,7 +52,7 @@ class configs ($username = 'hogklint') {
 
   file {"/home/$username/.xinitrc":
     ensure => 'link',
-    target => "/home/$username/repos/user-files/xinitrc-benighted",
+    target => "/home/$username/repos/user-files/xinitrc-$host",
     owner => "$username"
   }
 
