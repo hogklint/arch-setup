@@ -1,5 +1,4 @@
-class sudo_configs ($username = 'hogklint',
-        $buildserver = 'core-build-01') {
+class sudo_configs ($username = 'hogklint') {
 
   file {"/etc/X11/xorg.conf.d/40-libinput.conf":
     ensure => present,
@@ -19,46 +18,11 @@ class sudo_configs ($username = 'hogklint',
     owner => "root",
   }
 
-  file_line {"Decrypt at login":
-    path => '/etc/pam.d/system-login',
-    ensure => present,
-    line => 'auth       optional   pam_exec.so expose_authtok /etc/pam_cryptsetup.sh',
-    after => 'auth +include +system-auth',
-    match => "auth.*pam_cryptsetup.sh",
-  }
-
-  file {"/etc/pam_cryptsetup.sh":
-    ensure => present,
-    source => "/home/$username/repos/user-files/etc_configs/pam_cryptsetup.sh",
-    owner => "root",
-    mode => "0544",
-  }
-
   file_line {"ntp.conf":
     path => '/etc/ntp.conf',
     ensure => present,
     line => 'server asdf2egot-dc05.bcompany.net',
     after => 'NTP pool',
-  }
-
-  file {"/etc/docker/daemon.json":
-    ensure => present,
-    owner => "root",
-    mode => "0644",
-    replace => 'no',
-  }
-
-  file_line {"Docker insecure nexus registry":
-    path => '/etc/docker/daemon.json',
-    ensure => present,
-    line => '{ "insecure-registries":["nexus.android.ccompanyauto.net:5050","nexus.android.ccompanyauto.net:5000"] }',
-    match => "nexus.android.ccompanyauto.net",
-  }
-
-  file {"/home/common":
-    ensure => 'directory',
-    replace => 'false',
-    owner => "$username"
   }
 
   user {"$username":
