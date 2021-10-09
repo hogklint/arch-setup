@@ -91,7 +91,6 @@ class packages {
     'xorg-xprop',
     'rxvt-unicode',
     'arandr',
-    'kdiff3',
     'awesome',
     'ttf-dejavu',
     'chromium',
@@ -105,6 +104,7 @@ class packages {
   package { $x_packages : ensure => 'installed' }
 
   $x_devel_packages = [
+    'kdiff3',
     'code',
   ]
   package { $x_devel_packages : ensure => 'installed' }
