@@ -1,4 +1,4 @@
-class create_user ($username = 'hogklint') {
+class create_user ($username) {
   user {"$username":
     ensure => present,
     gid => "users",

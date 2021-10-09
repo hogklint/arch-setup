@@ -1,4 +1,4 @@
-class user_repos ($username = 'hogklint'){
+class user_repos ($username){
   file {"/home/$username/repos":
     ensure => 'directory',
     owner => "$username",
