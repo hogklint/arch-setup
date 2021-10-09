@@ -20,4 +20,7 @@ autojump"
 #timeshift/snapper
 #ttf-ms-fonts
 
-paru -S "$aur_packages"
+for package in $aur_packages
+do
+  paru -S "$package"
+done
