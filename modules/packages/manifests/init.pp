@@ -22,6 +22,8 @@ class packages {
     'zsh',
     'cronie',
     'rsync',
+    'man-db',
+    'man-pages',
   ]
 #'bolt',
 #'fwupd',
