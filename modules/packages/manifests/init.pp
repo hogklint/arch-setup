@@ -4,7 +4,7 @@ class packages {
   }
 
   $base_packages = [
-    'bind-tools',
+    'bind',
     'curl',
     'git',
     'htop',
