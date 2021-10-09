@@ -23,5 +23,5 @@ tealdeer-git"
 
 for package in $aur_packages
 do
-  paru -S "$package"
+  paru --skipreview -S "$package"
 done
