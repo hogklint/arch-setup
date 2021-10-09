@@ -11,4 +11,4 @@ puppet module install --modulepath=$modules_path puppetlabs-vcsrepo
 puppet module install --modulepath=$modules_path puppetlabs-stdlib
 
 # For sudo::conf
-puppet module install --modulepath=$modules_path saz-sudo.
+puppet module install --modulepath=$modules_path saz-sudo
