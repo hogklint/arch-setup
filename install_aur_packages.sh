@@ -15,7 +15,8 @@ popd
 aur_packages="nauniq
 plantuml
 urlview
-path-extractor"
+path-extractor
+autojump"
 #timeshift/snapper
 #ttf-ms-fonts
 
