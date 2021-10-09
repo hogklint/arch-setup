@@ -16,7 +16,8 @@ aur_packages="nauniq
 plantuml
 urlview
 path-extractor
-autojump"
+autojump
+tealdeer-git"
 #timeshift/snapper
 #ttf-ms-fonts
 
