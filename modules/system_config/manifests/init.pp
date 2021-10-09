@@ -26,11 +26,6 @@ class system_config ($username = 'hogklint') {
     after => 'NTP pool',
   }
 
-  user {"$username":
-      groups => ['wheel', 'uucp', 'wireshark', 'docker', 'libvirt'],
-      membership => minimum,
-  }
-
   exec {'Add snapper config':
       unless => '/bin/test -f /etc/snapper/configs/root',
       command => "snapper -c root create-config /",
