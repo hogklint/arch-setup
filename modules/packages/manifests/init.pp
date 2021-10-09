@@ -47,7 +47,6 @@ class packages {
     'ctags',
     'doxygen',
     'gcovr',
-    'python2-pyserial',
     'gdb',
     'bc',
     ]
