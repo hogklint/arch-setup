@@ -5,6 +5,7 @@ class packages {
 
   $base_packages = [
     'bind',
+    'inetutils',
     'curl',
     'git',
     'htop',
