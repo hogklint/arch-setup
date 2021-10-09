@@ -1,4 +1,4 @@
-class sudo_configs ($username = 'hogklint') {
+class system_config ($username = 'hogklint') {
 
   file {"/etc/X11/xorg.conf.d/40-libinput.conf":
     ensure => present,
