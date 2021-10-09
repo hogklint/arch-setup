@@ -12,14 +12,14 @@ class system_config ($username) {
     owner => "root",
   }
 
-  file_line {"ntp.conf":
+  file_line {"ntp.conf1":
     path => '/etc/ntp.conf',
     ensure => present,
     line => 'server 2.se.pool.ntp.org',
     after => 'NTP pool',
   }
 
-  file_line {"ntp.conf":
+  file_line {"ntp.conf2":
     path => '/etc/ntp.conf',
     ensure => present,
     line => 'server 0.se.pool.ntp.org',
