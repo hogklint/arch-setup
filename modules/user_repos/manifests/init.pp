@@ -68,4 +68,11 @@ class user_repos ($username){
     source => 'https://github.com/felixr/urxvt-color-themes.git',
     user => "$username",
   }
+
+  vcsrepo {"/home/$username/.tmux/plugins/tpm":
+    ensure => present,
+    provider => git,
+    source => 'https://github.com/tmux-plugins/tpm',
+    user => "$username",
+  }
 }
