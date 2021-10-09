@@ -64,9 +64,6 @@ class packages {
     'networkmanager',
     'network-manager-applet',
     'wireshark-qt',
-    'openconnect',
-    'networkmanager-openconnect',
-    'openvpn',
     'gnu-netcat',
     ]
   package { $network_packages : ensure => 'installed' }
@@ -100,7 +97,6 @@ class packages {
     'chromium',
     'slock',
     'xautolock',
-    'pidgin',
     'zim',
     'feh',
     'mplayer',
@@ -129,7 +125,6 @@ class packages {
     'puppet',
     'numlockx',
     'acpi',
-    'debootstrap',
     'snapper',
   ]
   package { $other_packages : ensure => 'installed' }
