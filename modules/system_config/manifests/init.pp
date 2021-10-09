@@ -26,6 +26,11 @@ class system_config ($username) {
     after => 'NTP pool',
   }
 
+  sudo::conf {'wheel':
+    ensure  => present,
+    content => '%wheel ALL=(ALL) ALL',
+  }
+
   exec {'Add snapper config':
       unless => '/bin/test -f /etc/snapper/configs/root',
       command => "snapper -c root create-config /",
