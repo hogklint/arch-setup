@@ -12,6 +12,21 @@ class system_config ($username) {
     owner => "root",
   }
 
+  # https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
+  file_line {"crypttab_swap":
+    path => '/etc/crypttab',
+    ensure => present,
+    line => 'cryptswap     LABEL=cryptswap  /dev/urandom  swap,offset=2048,cipher=aes-xts-plain64,size=512',
+    match => 'LABEL=cryptswap',
+  }
+
+  file_line {"fstab_swap":
+    path => '/etc/fstab',
+    ensure => present,
+    line => '/dev/mapper/cryptswap  none   swap    defaults   0       0',
+    match => '/dev/mapper/cryptswap',
+  }
+
   file_line {"ntp.conf1":
     path => '/etc/ntp.conf',
     ensure => present,
