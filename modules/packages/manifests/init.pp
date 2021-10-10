@@ -26,6 +26,7 @@ class packages {
     'rsync',
     'man-db',
     'man-pages',
+    'pass',
   ]
 #'bolt',
 #'fwupd',
