@@ -21,6 +21,7 @@ class packages {
     'p7zip',
     'gvim',
     'zsh',
+    'zsh-completions',
     'cronie',
     'rsync',
     'man-db',
@@ -58,10 +59,12 @@ class packages {
     ]
   package { $devel_packages: ensure => 'installed' }
 
+  # sof-firmware for Thinkpad X1 soundcard
   $sound_packages = [
     'alsa-utils',
     'pulseaudio',
     'pavucontrol',
+    'sof-firmware',
     ]
   package { $sound_packages: ensure => 'installed' }
 
