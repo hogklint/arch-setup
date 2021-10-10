@@ -52,6 +52,8 @@ class packages {
     'gcovr',
     'gdb',
     'bc',
+    'nodejs',
+    'npm',
     ]
   package { $devel_packages: ensure => 'installed' }
 
