@@ -17,6 +17,7 @@ plantuml
 urlview
 path-extractor
 autojump
+openvpn3
 tealdeer-git"
 #timeshift/snapper
 #ttf-ms-fonts

@@ -74,8 +74,6 @@ class packages {
     'network-manager-applet',
     'wireshark-qt',
     'gnu-netcat',
-    'openvpn',
-    'networkmanager-openvpn',
     ]
   package { $network_packages : ensure => 'installed' }
 
