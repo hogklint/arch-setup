@@ -17,12 +17,22 @@ plantuml
 urlview
 path-extractor
 autojump
-openvpn3
 tealdeer-git"
 #timeshift/snapper
 #ttf-ms-fonts
 
 for package in $aur_packages
+do
+  paru --skipreview -S "$package"
+done
+
+kd_packages="mongocli-bin
+mongodb-compass
+openvpn3
+insomnia-bin
+aur/mysql"
+
+for package in $kd_packages
 do
   paru --skipreview -S "$package"
 done
