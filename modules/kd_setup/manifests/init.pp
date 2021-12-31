@@ -31,4 +31,9 @@ class kd_setup ($username) {
     ensure => "present",
     members => $username,
   }
+
+  sudo::conf {'sudo_timestamp_timeout':
+    ensure  => present,
+    content => 'Defaults timestamp_timeout=30',
+  }
 }
