@@ -57,6 +57,12 @@ class user_config ($username, $host) {
     owner => "$username"
   }
 
+  file {"/home/$username/.urlview":
+    ensure => 'link',
+    target => "/home/$username/repos/user-files/urlview.conf",
+    owner => "$username"
+  }
+
   file {"/home/$username/tmp":
     ensure => 'directory',
     owner => "$username"
