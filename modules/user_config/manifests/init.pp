@@ -75,6 +75,14 @@ class user_config ($username, $host) {
     user => "$username",
   }
 
+  exec {"Install json log viewer (jl)":
+    command => "go install -v github.com/mightyguava/jl/cmd/jl@v0.1.0",
+    environment => ["GOPATH=/home/$username/local/go", "HOME=/home/$username"],
+    provider => 'shell',
+    user => "$username",
+    cwd => "/home/$username",
+  }
+
   ###########
   # gpg-agent
   #

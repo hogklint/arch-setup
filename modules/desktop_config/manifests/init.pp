@@ -1,4 +1,4 @@
-class system_config ($username) {
+class desktop_config ($username) {
 
   file {"/etc/X11/xorg.conf.d/99-mouse-speed.conf":
     ensure => present,

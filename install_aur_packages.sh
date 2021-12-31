@@ -31,6 +31,7 @@ kd_packages="mongocli-bin
 mongodb-compass
 openvpn3
 insomnia-bin
+stern-bin
 aur/mysql
 aur/aws-cli-git
 aur/aws-iam-authenticator-bin

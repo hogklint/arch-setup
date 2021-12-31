@@ -5,7 +5,7 @@ node default {
   class {'system_config': username => '', }
   class {'user_config':
     username => '',
-    host => 'crown',
+    host => 'desktop',
   }
   class {'kd_setup': username => '', }
   class {'desktop_config': username => '', }
