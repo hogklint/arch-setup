@@ -68,4 +68,24 @@ class user_config ($username, $host) {
     source => 'https://aur.archlinux.org/paru.git',
     user => "$username",
   }
+
+  ###########
+  # gpg-agent
+  #
+  file {"/home/$username/.pam_environment":
+    ensure => 'link',
+    target => "/home/$username/repos/user-files/pam-environment",
+    owner => "$username"
+  }
+
+  file {"/home/$username/.gnupg":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  file {"/home/$username/.gnupg/gpg-agent.conf":
+    ensure => 'link',
+    target => "/home/$username/repos/user-files/gpg-agent.conf",
+    owner => "$username"
+  }
 }
