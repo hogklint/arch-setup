@@ -94,4 +94,34 @@ class user_config ($username, $host) {
     target => "/home/$username/repos/user-files/gpg-agent.conf",
     owner => "$username"
   }
+
+  ###########
+  # ssh-agent
+  #
+  file {"/home/$username/.config/systemd":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  file {"/home/$username/.config/systemd/user":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  file {"/home/$username/.config/systemd/user/default.target.wants":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  file {"/home/$username/.config/systemd/user/ssh-agent.service":
+    ensure => 'link',
+    target => "/home/$username/repos/user-files/ssh-agent.service",
+    owner => "$username"
+  }
+
+  file {"/home/$username/.config/systemd/user/default.target.wants/ssh-agent.service":
+    ensure => 'link',
+    target => "/home/$username/.config/systemd/user/ssh-agent.service",
+    owner => "$username"
+  }
 }
