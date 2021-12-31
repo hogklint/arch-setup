@@ -66,9 +66,13 @@ class packages {
   # sof-firmware for Thinkpad X1 soundcard
   $sound_packages = [
     'alsa-utils',
-    'pulseaudio',
+    'pipewire',
+    'wireplumber',
+    'pipewire-pulse',
     'pavucontrol',
     'sof-firmware',
+    'bluez',
+    'bluez-utils',
     ]
   package { $sound_packages: ensure => 'installed' }
 
