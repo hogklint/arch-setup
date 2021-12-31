@@ -1,2 +1,3 @@
 modules/vcsrepo
 modules/stdlib
+modules/sudo
