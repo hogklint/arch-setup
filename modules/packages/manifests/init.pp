@@ -115,6 +115,7 @@ class packages {
     'xclip',
     'flameshot',
     'cbatticon',
+    'intel-media-driver',
   ]
   package { $x_packages : ensure => 'installed' }
 
