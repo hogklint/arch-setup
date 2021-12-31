@@ -30,7 +30,10 @@ kd_packages="mongocli-bin
 mongodb-compass
 openvpn3
 insomnia-bin
-aur/mysql"
+aur/mysql
+aur/aws-cli-git
+aur/aws-iam-authenticator-bin
+telepresence2"
 
 for package in $kd_packages
 do
