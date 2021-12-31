@@ -20,6 +20,7 @@ class packages {
     'unzip',
     'p7zip',
     'gvim',
+    'etc-update',
     'zsh',
     'zsh-completions',
     'cronie',
