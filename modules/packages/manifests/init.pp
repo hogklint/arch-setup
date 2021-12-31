@@ -57,6 +57,7 @@ class packages {
     'bc',
     'nodejs',
     'npm',
+    'bash-language-server',
     ]
   package { $devel_packages: ensure => 'installed' }
 
