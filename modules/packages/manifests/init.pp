@@ -58,6 +58,7 @@ class packages {
     'nodejs',
     'npm',
     'bash-language-server',
+    'shellcheck',
     ]
   package { $devel_packages: ensure => 'installed' }
 
@@ -110,6 +111,10 @@ class packages {
     'feh',
     'mplayer',
     'oxygen-icons',
+    'redshift',
+    'xclip',
+    'flameshot',
+    'cbatticon',
   ]
   package { $x_packages : ensure => 'installed' }
 
