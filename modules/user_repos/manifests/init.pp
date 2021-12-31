@@ -91,4 +91,19 @@ class user_repos ($username){
     source => 'https://github.com/tmux-plugins/tpm',
     user => "$username",
   }
+
+  ##############################
+  # Resize urxvt font on-the-fly
+  #
+  file {"/home/$username/.urxvt":
+    ensure => 'directory',
+    owner => "$username"
+  }
+
+  vcsrepo {"/home/$username/.urxvt/ext":
+    ensure => present,
+    provider => git,
+    source => 'https://github.com/simmel/urxvt-resize-font.git',
+    user => "$username",
+  }
 }
