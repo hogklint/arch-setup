@@ -27,6 +27,7 @@ class packages {
     'man-db',
     'man-pages',
     'pass',
+    'sbsigntools',
   ]
 #'bolt',
 #'fwupd',

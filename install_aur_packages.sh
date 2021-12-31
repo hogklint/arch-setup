@@ -17,7 +17,8 @@ plantuml
 urlview
 path-extractor
 autojump
-tealdeer-git"
+tealdeer-git
+shim-signed"
 #timeshift/snapper
 #ttf-ms-fonts
 
