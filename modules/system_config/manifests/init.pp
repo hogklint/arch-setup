@@ -13,6 +13,13 @@ class system_config ($username) {
     owner => "root",
   }
 
+  # Disable pc-speaker/bell
+  file {"/etc/modprobe.d/nobell.conf":
+    ensure => present,
+    content => 'blacklist pcspkr',
+    owner => "root",
+  }
+
   # https://wiki.archlinux.org/title/Dm-crypt/Swap_encryption#UUID_and_LABEL
   file_line {"crypttab_swap":
     path => '/etc/crypttab',
