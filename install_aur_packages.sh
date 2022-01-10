@@ -18,7 +18,8 @@ urlview
 path-extractor
 autojump
 tealdeer-git
-shim-signed"
+shim-signed
+docker-credential-pass"
 #timeshift/snapper
 #ttf-ms-fonts
 

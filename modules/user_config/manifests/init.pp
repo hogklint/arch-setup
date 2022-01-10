@@ -132,4 +132,10 @@ class user_config ($username, $host) {
     target => "/home/$username/.config/systemd/user/ssh-agent.service",
     owner => "$username"
   }
+
+  file {"/home/$username/.docker/config.json":
+    ensure => 'link',
+    target => "/home/$username/repos/user-files/docker-config.json",
+    owner => "$username"
+  }
 }
