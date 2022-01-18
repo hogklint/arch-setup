@@ -1,12 +1,12 @@
 node default {
   class {'packages': }
-  class {'create_user': username => '', }
-  class {'user_repos': username => '', }
-  class {'system_config': username => '', }
+  class {'create_user': username => 'jhogklint', }
+  class {'user_repos': username => 'jhogklint', }
+  class {'system_config': username => 'jhogklint', }
   class {'user_config':
-    username => '',
+    username => 'jhogklint',
     host => 'crown',
   }
-  class {'kd_setup': username => '', }
+  class {'kd_setup': username => 'jhogklint', }
 }
 
