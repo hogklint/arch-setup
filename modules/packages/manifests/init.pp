@@ -63,6 +63,7 @@ class packages {
     'npm',
     'bash-language-server',
     'shellcheck',
+    'librdkafka',
     ]
   package { $devel_packages: ensure => 'installed' }
 
