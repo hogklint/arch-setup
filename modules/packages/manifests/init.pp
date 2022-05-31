@@ -113,6 +113,7 @@ class packages {
     'arandr',
     'awesome',
     'ttf-dejavu',
+    'noto-fonts-emoji',
     'chromium',
     'slock',
     'xautolock',

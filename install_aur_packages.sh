@@ -19,7 +19,9 @@ path-extractor
 autojump
 tealdeer-git
 shim-signed
-docker-credential-pass"
+docker-credential-pass
+jwt-cli-bin
+ttf-symbola"
 #timeshift/snapper
 #ttf-ms-fonts
 
