@@ -30,6 +30,7 @@ class packages {
     'man-pages',
     'pass',
     'sbsigntools',
+    'moreutils',
   ]
 #'bolt',
 #'fwupd',
