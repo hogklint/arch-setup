@@ -21,7 +21,8 @@ tealdeer-git
 shim-signed
 docker-credential-pass
 jwt-cli-bin
-ttf-symbola"
+ttf-symbola
+upd72020x-fw"
 #timeshift/snapper
 #ttf-ms-fonts
 
