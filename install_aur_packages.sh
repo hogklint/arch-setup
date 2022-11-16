@@ -22,7 +22,8 @@ shim-signed
 docker-credential-pass
 jwt-cli-bin
 ttf-symbola
-upd72020x-fw"
+upd72020x-fw
+beekeeper-studio-bin"
 #timeshift/snapper
 #ttf-ms-fonts
 

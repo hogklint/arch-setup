@@ -75,6 +75,7 @@ class packages {
     'wireplumber',
     'pipewire-pulse',
     'pavucontrol',
+    'pasystray',
     'sof-firmware',
     'bluez',
     'bluez-utils',
