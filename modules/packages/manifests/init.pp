@@ -113,6 +113,7 @@ class packages {
     'xorg-xprop',
     'rxvt-unicode',
     'arandr',
+    'autorandr',
     'awesome',
     'ttf-dejavu',
     'noto-fonts-emoji',
@@ -130,6 +131,10 @@ class packages {
     'intel-media-driver',
   ]
   package { $x_packages : ensure => 'installed' }
+
+  service {'autorandr':
+    enable => 'true',
+  }
 
   $x_devel_packages = [
     'kdiff3',

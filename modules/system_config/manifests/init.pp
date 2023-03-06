@@ -6,13 +6,6 @@ class system_config ($username) {
     owner => "root",
   }
 
-  file {"/etc/udev/rules.d/95-monitor-changes.rules":
-    ensure => present,
-    content => inline_template(
-        'ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/<%= @username %>/.Xauthority", RUN+="/home/<%= @username %>/local/bin/monitor_changed.sh"'),
-    owner => "root",
-  }
-
   # Disable pc-speaker/bell
   file {"/etc/modprobe.d/nobell.conf":
     ensure => present,
