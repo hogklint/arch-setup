@@ -21,6 +21,8 @@ class packages {
     'unzip',
     'p7zip',
     'gvim',
+    'neovim',
+    'python-pynvim',
     'etc-update',
     'zsh',
     'zsh-completions',
