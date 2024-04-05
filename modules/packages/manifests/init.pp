@@ -22,7 +22,6 @@ class packages {
     'p7zip',
     'gvim',
     'neovim',
-    'python-pynvim',
     'etc-update',
     'zsh',
     'zsh-completions',
@@ -67,6 +66,12 @@ class packages {
     'bash-language-server',
     'shellcheck',
     'librdkafka',
+    'python-pynvim',
+    'pyright',
+    'gopls',
+    'vscode-json-languageserver',
+    'yaml-language-server',
+    'lua-language-server',
     ]
   package { $devel_packages: ensure => 'installed' }
 
