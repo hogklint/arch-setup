@@ -19,6 +19,7 @@ class packages {
     'pass',
     'moreutils',
     'autojump',
+    'pinentry-tty',
   ]
 #'bolt',
 #'fwupd',
