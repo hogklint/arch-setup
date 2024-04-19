@@ -13,7 +13,6 @@ class packages {
     'unzip',
     'p7zip',
     'vim',
-# nix    'neovim',
     'zsh',
     'rsync',
     'man-db',
@@ -32,7 +31,6 @@ class packages {
     'tig',
     'strace',
     'jq',
-# nix    'yq',
     'lldb',
     'llvm',
     'cmake',
@@ -46,14 +44,9 @@ class packages {
     'bc',
     'nodejs',
     'npm',
-# nix    'bash-language-server',
     'shellcheck',
     'python3-pynvim',
-# nix    'pyright',
     'gopls',
-# nix    'vscode-json-languageserver',
-# nix    'yaml-language-server',
-# nix    'lua-language-server',
     ]
   package { $devel_packages: ensure => 'installed' }
 
@@ -100,7 +93,6 @@ class packages {
 
   $x_devel_packages = [
     'kdiff3',
-# nix    'code',
   ]
   package { $x_devel_packages : ensure => 'installed' }
 
