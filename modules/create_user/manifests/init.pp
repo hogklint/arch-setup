@@ -2,7 +2,7 @@ class create_user ($username) {
   user {"$username":
     ensure => present,
     gid => "users",
-    groups => ['wheel', 'uucp', 'wireshark', 'docker', 'libvirt'],
+    groups => ['sudo', 'uucp', 'wireshark', 'docker'],
     membership => minimum,
     managehome => true,
     home => "/home/$username",

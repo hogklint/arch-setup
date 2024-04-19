@@ -1,11 +1,5 @@
 class packages {
-  package { 'vim':
-      ensure => 'absent',
-  }
-
   $base_packages = [
-    'bind',
-    'inetutils',
     'usbutils',
     'curl',
     'git',
@@ -13,147 +7,108 @@ class packages {
     'htop',
     'glances',
     'sysstat',
-    'openssh',
-    'sudo',
     'tmux',
     'traceroute',
     'tree',
     'unzip',
     'p7zip',
-    'gvim',
-    'neovim',
-    'etc-update',
+    'vim',
+# nix    'neovim',
     'zsh',
-    'zsh-completions',
-    'cronie',
     'rsync',
     'man-db',
-    'man-pages',
     'pass',
-    'sbsigntools',
     'moreutils',
+    'autojump',
   ]
 #'bolt',
 #'fwupd',
   package { $base_packages: ensure => 'installed' }
 
-  service {'cronie':
-    ensure => 'running',
-    enable => 'true',
-  }
-
   $devel_packages = [
-    'base-devel',
-    'the_silver_searcher',
-    'fd',
+    'build-essential',
+    'silversearcher-ag',
+    'fd-find',
     'tig',
     'strace',
     'jq',
-    'go-yq',
+# nix    'yq',
     'lldb',
     'llvm',
     'cmake',
     'lsof',
     'python-pip',
     'picocom',
-    'ctags',
+    'exuberant-ctags',
     'doxygen',
     'gcovr',
     'gdb',
     'bc',
     'nodejs',
     'npm',
-    'bash-language-server',
+# nix    'bash-language-server',
     'shellcheck',
-    'librdkafka',
-    'python-pynvim',
-    'pyright',
+    'python3-pynvim',
+# nix    'pyright',
     'gopls',
-    'vscode-json-languageserver',
-    'yaml-language-server',
-    'lua-language-server',
+# nix    'vscode-json-languageserver',
+# nix    'yaml-language-server',
+# nix    'lua-language-server',
     ]
   package { $devel_packages: ensure => 'installed' }
 
   # sof-firmware for Thinkpad X1 soundcard
   $sound_packages = [
-    'alsa-utils',
-    'pipewire',
-    'wireplumber',
-    'pipewire-pulse',
     'pavucontrol',
     'pasystray',
-    'sof-firmware',
-    'bluez',
-    'bluez-utils',
+    'firmware-sof-signed',
     ]
   package { $sound_packages: ensure => 'installed' }
 
   $network_packages = [
-    'networkmanager',
-    'network-manager-applet',
     'wireshark-qt',
-    'gnu-netcat',
     ]
   package { $network_packages : ensure => 'installed' }
 
-  service {'NetworkManager':
-    ensure => 'running',
-    enable => 'true',
-  }
-
-  $ntp_packages = [
-    'ntp',
-    ]
-  package { $ntp_packages : ensure => 'installed' }
-
-  service {'ntpd':
-    ensure => 'running',
-    enable => 'true',
-  }
-
   $x_packages = [
-    'xorg-server',
-    'xorg-xinit',
-    'xorg-xrandr',
-    'xorg-xev',
-    'xorg-xprop',
+#    'xorg-xev',
+#    'xorg-xprop',
     'rxvt-unicode',
     'arandr',
-    'autorandr',
+#    'autorandr',
     'awesome',
-    'ttf-dejavu',
-    'noto-fonts-emoji',
+#    'ttf-dejavu',
+#    'noto-fonts-emoji',
     'chromium',
     'slock',
     'xautolock',
     'zim',
     'feh',
     'mplayer',
-    'oxygen-icons',
+#    'oxygen-icons',
     'redshift',
     'xclip',
     'flameshot',
     'cbatticon',
-    'intel-media-driver',
+    'intel-media-va-driver',
   ]
   package { $x_packages : ensure => 'installed' }
 
-  service {'autorandr':
-    enable => 'true',
-  }
+#  service {'autorandr':
+#    enable => 'true',
+#  }
 
   $x_devel_packages = [
     'kdiff3',
-    'code',
+# nix    'code',
   ]
   package { $x_devel_packages : ensure => 'installed' }
 
   $filesystem_packages = [
-    'btrfs-progs',
-    'nfs-utils',
-    'ecryptfs-utils',
-    'pam_mount',
+#    'btrfs-progs',
+    'nfs-common',
+#    'ecryptfs-utils',
+#    'pam_mount',
     'ntfs-3g',
     'parted',
     'udiskie',
@@ -165,7 +120,7 @@ class packages {
     'puppet',
     'numlockx',
     'acpi',
-    'snapper',
+#    'snapper',
   ]
   package { $other_packages : ensure => 'installed' }
 
@@ -178,7 +133,7 @@ class packages {
   $container = [
     'docker',
     'qemu',
-    'libvirt',
+    'libvirt-clients',
   ]
   package { $container : ensure => 'installed' }
 
@@ -201,3 +156,17 @@ class packages {
 #  package { $otherother_packages : ensure => 'installed' }
 }
 
+# TODO: docker
+# sudo apt-get update
+# sudo apt-get install ca-certificates curl
+# sudo install -m 0755 -d /etc/apt/keyrings
+# sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+# sudo chmod a+r /etc/apt/keyrings/docker.asc
+# 
+# # Add the repository to Apt sources:
+# echo \
+#   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+#   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+#   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+# sudo apt-get update
+# sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin

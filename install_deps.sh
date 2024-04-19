@@ -11,4 +11,5 @@ puppet module install --modulepath=$modules_path puppetlabs-vcsrepo
 puppet module install --modulepath=$modules_path puppetlabs-stdlib
 
 # For sudo::conf
-puppet module install --modulepath=$modules_path saz-sudo
+# Ubuntu's puppet version is too old for this module it seems
+# puppet module install --modulepath=$modules_path saz-sudo
