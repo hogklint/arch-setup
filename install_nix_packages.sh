@@ -6,9 +6,12 @@ function error()
   exit -1
 }
 
+# Install specific version
+# https://lazamar.co.uk/nix-versions/
+
 # Unfree:
 # nixpkgs.vscode
-# nixpkgs.mongodb-compass
+# 
 
 # mongocli vs mongosh?
 nix_packages=(nixpkgs.extract_url
@@ -26,7 +29,13 @@ nixpkgs.kubectl
 nixpkgs.dbeaver
 nixpkgs.insomnia
 nixpkgs.stern
+nixpkgs.ctop
 nixpkgs.beekeeper-studio)
 
 nix-env -iA "${nix_packages[@]}"
 
+unfree_nix_packages=(nixpkgs._1password
+nixpkgs._1password-gui
+nixpkgs.mongodb-compass
+)
+NIXPKGS_ALLOW_UNFREE=1 nix-env -iA "${unfree_nix_packages[@]}"
