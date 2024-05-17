@@ -30,12 +30,16 @@ nixpkgs.dbeaver
 nixpkgs.insomnia
 nixpkgs.stern
 nixpkgs.ctop
-nixpkgs.beekeeper-studio)
+nixpkgs.yarn
+nixpkgs.beekeeper-studio
+nixpkgs.google-cloud-sdk-gce
+)
 
 nix-env -iA "${nix_packages[@]}"
 
 unfree_nix_packages=(nixpkgs._1password
 nixpkgs._1password-gui
 nixpkgs.mongodb-compass
+nixpkgs.vscode
 )
 NIXPKGS_ALLOW_UNFREE=1 nix-env -iA "${unfree_nix_packages[@]}"
