@@ -33,6 +33,7 @@ nixpkgs.ctop
 nixpkgs.yarn
 nixpkgs.beekeeper-studio
 nixpkgs.google-cloud-sdk-gce
+nixpkgs.vcpkg
 )
 
 nix-env -iA "${nix_packages[@]}"
